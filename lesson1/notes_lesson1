@@ -1,0 +1,58 @@
+linux == kernel
+
+GNU [GNU's not Linux] == sistema operativo 
+
+UNIX era un sistema operativo (linux, MacOS è UNIX-like)
+
+	-- STACK SOFTWARE
+
+- Applicazioni
+- Sistema Operativo (OS) [si occupa di gestire le risorse del sistema]
+- Firmware
+
+	-- SISTEMA OPERATIVO
+
+- Interfaccia grafica (Plasma, KDE, XFCE, GNOME)
+- Sofware di base (GNU e tutto quello che fornisce: compilatori, shell, librerie, ecc..)
+- Kernel (astrae l'hw come oggetto con cui il software possa interagirci)
+
+	-- DISTRIBUZIONI
+
+è un insieme di software (kernel, GUI, apllicazioni, ecc...)
+
+debian, RedHat, fedora, ubuntu
+
+	-- PACCHETTI
+
+Ogni sw del sistema compreso il OS sono gestiti come pacchetto.
+Le azioni sui pachetti sono gestiti dal packet manager.
+
+L'aggiornamento dei pacchetti non necessitano di un riavvio e la decisione 
+sta solo all'utente
+
+	-- MODALITA' di INSTALLAZIONE
+
+- VM
+- Dual boot
+- single OS
+- WSL
+
+LINUX --> EVERYTHING IS A FILE 
+
+	-- SHELL
+
+ ls --> LiSt (ha vari qualificatori es. -la, -l, -a, ec...)
+	-R  (una sorta di tree, ls in tutte le cartelle)
+
+ cd --> ChangeDirectory
+	. cartella attuale
+	.. cartella precedente
+	- ritorna nella directory precedente
+
+ pwd --> PrintWorkingDirectory
+
+ touch --> creare file / modificare la data di accesso ad un file
+
+ cat --> stampa il contenuto di un file (contacatena)
+
+ mkdir --> make directory (crea una cartella)
