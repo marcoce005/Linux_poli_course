@@ -1,0 +1,47 @@
+			LICENZE
+
+FLOSS --> Free / Libre Open Source Software
+
+nel 1980 negli USA vien rilasciato il Computer Copyright Act, introducendo la tutela del software
+
+Stalman: crea il movimento per software libero [FSF Free Software Foundation]
+
+Ci sono software che si avvantaggiano dell'aiuto della community per il migliorameto del sw
+
+Sulla base del browser next navigator e stato creato firefox
+
+ - Definizione
+
+La licenza d'uso è il documento che accompagna il software e specifica i diritti e i doveri di chi lo riceve e di chi lo diffonde.
+es. GPL [Gnu-Linux], LGPL, BSD
+
+P.I. == proprietà intellettuale
+possibili soluzioni:
+ - privative [brevetti (non dura all'infinito) / diritto d'autore (in Italia / Europa)]
+ - Segreto industriale (dura all'infinito)
+ - Dominio pubblico
+
+SW realizzato su misura ("chiavi in mano") [diventa mio posso farci quello che voglio]
+SW ceduto (dal programmatore alla sw house, diventa della sw house)
+SW concesso in licenza (posso solo usarlo)
+
+se su licenza il reverse engeenering è vietato
+
+Apple limita l'uso del suo sw solo sui suoi dispositivi
+
+The Fours freedoms [FSF]:
+ 1. eseguire il programma come preferisci
+ 2. studiare come funziona e modificarlo
+ 3. distribuire copie
+ 4. distribuire copie con modifiche
+
+Tipologie di licenze:
+ - GPL [v.3] è detta "virale" --> obbliga a rilasciare le opere derivate con la medesima licenza
+ - BSD (-like) consente a terze parti di riutilizzare il codice sotto diversa licenza (per qualsiasi scopo)
+ - LGPL permette ai terzi di "linkare" il software (generalmente librerie) ad altro software con licenza diversa
+ - GFDL (Gnu Free Documentation License) per i manuali del software libero
+ - Affero GPL (per i SaaS) c'è l'obbligo i poter accedere al codice sorgente che gira sul server
+ - Licenze Creative Commons (CC), licenza modulare si può scegliere quali diritti attribuire e quali escludere
+	-- CC BY attribuzione
+	-- CC BY-ND attribuzione e no opere derivate
+	-- CC BY-NC attribuzione e no commerciale

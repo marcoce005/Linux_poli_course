@@ -56,3 +56,15 @@ LINUX --> EVERYTHING IS A FILE
  cat --> stampa il contenuto di un file (contacatena)
 
  mkdir --> make directory (crea una cartella)
+
+ cp --> copiare file [-r ricorsivo scansiona anche il contenuto delle cartelle interne]
+
+ mv --> move file [usato anche rinominare il file]
+
+ rm --> remove file [per le directory -rf (f forza l'eliminazione)]
+
+ man --> apre il manuale del comando
+
+ clear --> pulisce la shell definitivamente
+
+ ps --> processi svolti 
