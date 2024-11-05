@@ -1,0 +1,122 @@
+					STRUTTURA DEL FILE-SYSTEM
+
+determina il modo con il quale i dati sono scritti sul disco
+
+- win usa NTFS
+- linux usa EXT4 ma anche più nuovi come BTRFS (con gli snapshot per il recovery del OS, non sono bootabili)
+
+Linux usa i file per astrarre tutto:
+	- periferiche di sistema
+	- comunicazione (pipe, socket) 
+	- documenti, ecc...
+
+La directory '/' è la root
+
+L'albero di sistema GNU/Linux permette l'interazioni con file-system provenienti da diversi disci
+
+ - mount /dev/nome_partizione  /mnt --> permette di montare una partizione (con il sudo) [montiamo in mnt]
+ - umount /dev/nome_partizione --> smonta la partizione
+
+'/bin' contiene i file eseguibili [comandi]
+
+'/boot' contiene i file del kernel e le immagini di avvio + informazioni di LiLo e Grub [spesso è in una directory a parte]
+
+'/dev' file speciali (tra cui i dischi esterni) sono dischi virtuali non fisicamente presenti
+
+'/dev/null' distrugge qualsiasi file o stringa a lui inviato
+
+'/dev/zero' contiene una successione infinita di zeri
+
+'/dev/random' contiene una successione infinita di numeri casuali
+
+'/proc' contiene informazioni sul kernel, sistema, processi e periferiche (non fisicamente collegate)
+
+'/usr' ci sono tutti i gli eseguibili, documenti, librerie, 
+
+'/usr/bin' comandi basi
+
+'/usr/sbin' contiene comandi aggiuntivi per l'amministratore
+
+'/usr/lib' contiene librerie di sistema
+
+'/usr/share' contiene documentazione o librerie comuni a tutti, per esempio
+
+'/usr/share/man' contiene i testi delle manpage
+
+'/var' contiene file solitamente scritti dal kernel o servizi, per esempio i log
+
+'/etc' contiene i file di configurazione del sistema [le passowrd stanno sotto /etc/pasassswd]
+
+'/home' contiene le directory delle home degli utenti del sistema
+
+'/mnt' e '/media' sono le directory in cui vengono posizionati i filesystem aggiunti
+
+'/opt' serve per alcuni applicativi aggiuntivi
+
+'/tmp' per i file temporanei
+
+'/root' directory dell'amministratore di sistema
+
+La pipe '|' abilita l'output di un comando come input di un'altro
+
+
+I collegamenti sono gestiti dal comando 'ln', 2 tipi:
+ - soft link [ln -s $ORIGINE $DESTINAZIONE] è un puntatore al file di origine
+ - hard link è + forte di un collegamento (simile a una copia si può usare al posto mv)
+
+
+
+
+					SHELL
+				anatomia del comando
+
+<comando> <qualificatori> <para1> <para2> ...
+
+i qualificatori sono preceduti da '--' o '-' nella versione abbreviata
+
+- grep --> cerca una stringa
+	-i --> case INsensitive
+	-n --> mette il numero per ogni linea
+	-c --> numero totale delle linee che contengono la stringa
+
+- head --> stampa l'inizio di un file
+	-n --> quante linee visualizzare
+
+- tail --> stampa dalla fine
+	-n --> quante linee visuallizzare
+	-f --> non esce quando dopo stampa
+
+- less --> come cat ma ti permette di scorrere
+	/testo --> per cercare una stringa
+	n --> occorrenza (next)
+	q --> esci
+
+- echo --> stampa cosa riceve da parametro
+	-n --> non va a capo
+	-e --> interpreta i caratteri di escape
+
+- ls --> crea collegamenti
+	-s --> crea soft link
+	ls -lh --> riconosciamo i collegamenti
+
+- find --> cerca
+	-name --> nome file da cercare
+	-type d --> cerchiamo in una cartella
+
+- history --> comandi appena eseguiti
+
+- alias --> sono delle shortcut
+	alias new="comando"
+
+editor di testo:
+	nano
+	vi
+	vim
+	ed
+
+ - Ridirezione dei file
+ 	comando > file --> scrive l'output nel file
+	comando >> file --> appende l'output
+	comando < file --> il contenuto del file nel comando [come parametro]
+	comando 2> file --> mette solo gli errori
+	comando1 | comando2 --> output1 in input2
