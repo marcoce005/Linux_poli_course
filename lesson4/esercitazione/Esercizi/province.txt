@@ -1,0 +1,107 @@
+Roma			RM	 Lazio			4335849
+Milano			MI	 Lombardia		3261873
+Napoli			NA	 Campania		3072996
+Torino			TO	 Piemonte		2256142
+Brescia			BS	 Lombardia		1265954
+Bari			BA	 Puglia			1248489
+Palermo			PA	 Sicilia		1245826
+Bergamo			BG	 Lombardia		1114590
+Catania			CT	 Sicilia		1103917
+Salerno			SA	 Campania		1098513
+Bologna			BO	 Emilia-Romagna		1017196
+Firenze			FI	 Toscana		1012407
+Padova			PD	 Veneto			937908
+Verona			VR	 Veneto			926497
+Caserta			CE	 Campania		922965
+Varese			VA	 Lombardia		890768
+Treviso			TV	 Veneto			887806
+Monza e Brianza		MB	 Lombardia		873935
+Vicenza			VI	 Veneto			862418
+Venezia			VE	 Veneto			852351		
+Genova			GE	 Liguria		837427
+Lecce			LE	 Puglia			795134
+Cosenza			CS	 Calabria		705753
+Modena			MO	 Emilia-Romagna		705393
+Perugia			PG	 Umbria			656382
+Messina			ME	 Sicilia		622962
+Foggia			FG	 Puglia			622183
+Como			CO	 Lombardia		599204
+Cuneo			CN	 Piemonte		587098
+Taranto			TA	 Puglia			576756
+Latina			LT	 Lazio			575254
+Pavia			PV	 Lombardia		545888
+Reggio Calabria		RC	 Calabria		544815
+Trento			TN	 Trentino-Alto Adige	541098
+Reggio Emilia		RE	 Emilia-Romagna		531891
+Bolzano			BZ	 Trentino-Alto Adige	531178
+Udine			UD	 Friuli-Venezia Giulia	528791
+Sassari			SS	 Sardegna		491571
+Frosinone		FR	 Lazio			489083
+Ancona			AN	 Marche			471228
+Parma			PR	 Emilia-Romagna		451631
+Agrigento		AG	 Sicilia		434870
+Trapani			TP	 Sicilia		430492
+Cagliari		CA	 Sardegna		430372
+Alessandria		AL	 Piemonte		421284
+Pisa			PI	 Toscana		419037
+Avellino		AV	 Campania		418306
+Mantova			MN	 Lombardia		412292
+Siracusa		SR	 Sicilia		399224
+Forlì-Cesena		FC	 Emilia-Romagna		394627
+Brindisi		BR	 Puglia			392975
+Barletta-Andria-Trani	BT	 Puglia			390011
+Ravenna			RA	 Emilia-Romagna		389456
+Lucca			LU	 Toscana		387876
+Chieti			CH	 Abruzzo		385588
+Novara			NO	 Piemonte		369018
+Potenza			PZ	 Basilicata		364960
+Cremona			CR	 Lombardia		358955
+Catanzaro		CZ	 Calabria		358316
+Pesaro e Urbino		PU	 Marche			351303
+Sud Sardegna		SU	 Sardegna		350725
+Ferrara			FE	 Emilia-Romagna		345691
+Arezzo			AR	 Toscana		342654
+Lecco			LC	 Lombardia		337380
+Rimini			RN	 Emilia-Romagna		337276
+Livorno			LI	 Toscana		334832
+Ragusa			RG	 Sicilia		320893
+Pescara			PE	 Abruzzo		318909
+Viterbo			VT	 Lazio			317030
+Macerata		MC	 Marche			314178
+Pordenone		PN	 Friuli-Venezia Giulia	312533
+Teramo			TE	 Abruzzo		308052
+L'Aquila		AQ	 Abruzzo		299031
+Pistoia			PT	 Toscana		292473
+Piacenza		PC	 Emilia-Romagna		287674
+Benevento		BN	 Campania		277018
+Savona			SV	 Liguria		276064
+Siena			SI	 Toscana		267197
+Caltanissetta		CL	 Sicilia		262458
+Prato			PO	 Toscana		257716
+Rovigo			RO	 Veneto			234937
+Trieste			TS	 Friuli-Venezia Giulia	234493
+Lodi			LO	 Lombardia		230198
+Terni			TR	 Umbria			225633
+Grosseto		GR	 Toscana		221629
+Campobasso		CB	 Molise			221238
+La Spezia		SP	 Liguria		219556
+Asti			AT	 Piemonte		214638
+Imperia			IM	 Liguria		213840
+Nuoro			NU	 Sardegna		208550
+Ascoli Piceno		AP	 Marche			207179
+Belluno			BL	 Veneto			202950
+Matera			MT	 Basilicata		197909
+Massa-Carrara		MS	 Toscana		194878
+Sondrio			SO	 Lombardia		181095
+Biella			BI	 Piemonte		177585
+Crotone			KR	 Calabria		174980
+Fermo			FM	 Marche			173800
+Vercelli		VC	 Piemonte		170911
+Enna			EN	 Sicilia		164788
+Vibo Valentia		VV	 Calabria		160073
+Verbano-Cusio-Ossola	VB	 Piemonte		157844
+Oristano		OR	 Sardegna		157707
+Rieti			RI	 Lazio			155503
+Gorizia			GO	 Friuli-Venezia Giulia	139403
+Aosta			AO	 Valle d'Aosta		125666
+Isernia			IS	 Molise			84379

@@ -1,0 +1,22 @@
+ln -s Esercizi/ ~/Desktop/
+cd ~/Esercizi/
+ls
+cp ./-immagine.jpg ~/Pictures/immagine_ciro.jpg			// trick per fottere i file -...
+man xdg-open
+xdg-open ./-immagine.jpg
+du -sh ./*
+ls -la
+mv .nascosto divina_commedia.txt
+tail -n 5 divina_commedia.txt >> finale.txt
+man wc
+wc -w divina_commedia.txt
+cat divina_commedia.txt | grep -i -n filippo
+cat divina_commedia.txt | grep -i -C 4 filippo > file.txt
+wc -m file.txt
+man sort
+cat province.txt | grep -n -i torino
+find ./ -name trovami
+cat `find ./ -name trovami`				// only on bash, for fish shell --> cat (find ./ -name trovami)
+cd ../
+rm -rf Esercizi/
+rm ~/Desktop/Esercizi

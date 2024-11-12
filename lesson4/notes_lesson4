@@ -1,0 +1,15 @@
+ - find
+cerca i file in una cartella ricorsivamente (cartella dentro cartella)
+	-name --> definiamo il nome da cercare
+	- type --> la tipologia da cercare [d cartella, f file, ...]
+
+ - fd
+cerca i file / cartella meglio che find
+
+
+Input e output come file
+
+l'input e l'output viene astratto come 3 file:
+	- stdin --> dove viene scritto quello che l'utente digita
+	- stdout --> dove il programma scrive il suo output (se andato a buon fine)
+	- stderr --> dove il programma scrive gli errori (solo gli errori)
