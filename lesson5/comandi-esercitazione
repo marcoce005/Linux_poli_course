@@ -1,0 +1,20 @@
+// adduser --> solo su ubuntu e derivate
+
+useradd tux1	[più eventuali flag per la personalizzazione]
+useradd tux2
+
+less /etc/passwd
+passwd tux1
+passwd tux2
+passwd -l tux1
+
+addgroup pinguini
+usermod -aG pinguini tux1 tux2
+less /etc/groups
+mkdir /home/pinguini
+chown tux1:pinguini /home/pinguini
+chmod g+w /home/pinguini
+touch /home/pinguini/progetto
+chgrp pinguini /home/pinguini/progetto
+chmod g+x /home/pinguini/progetto
+
