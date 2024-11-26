@@ -1,0 +1,162 @@
+						GESTIONE DEI PACCHETTI
+
+apt, pacman, dnf, snap, flatpack
+
+File di installazione:
+	.deb
+	.rpm
+
+Compilazione:
+	automatizzata --> AUR, DUR
+	manuale --> git clone e make
+
+
+Pacchetto: Un pacchetto è un’unità di distribuzione del software. Permette modularità del software.
+
+Dipendenze: Una dipendenza è la necessità di un software di appoggiarsi ad un altro per funzionare (librerie, driver, …).
+
+Repository: I repository sono archivi web nei quali vengono raggruppati i pacchetti software installabili da un certo gestore.
+
+Compilazione: Processo per il quale il codice sorgente viene trasformato in un programma da poter poi installare.
+
+
+	APT [Advanced Package Tool]
+
+vantaggi:
+	- repo abbastanza sicure
+	- versioni di pacchetti più stabili
+	- gestione automatica degli update
+	- comodità di installazione
+
+svantaggi:
+	- non presente tutto (non c'è roba vecchia)
+	- pacchetti non aggiornati o vecchie versioni (node)
+
+Installazione:
+	apt install --> install 1 o più pacchetti
+	apt remove --> rimuove 1 o più pacchetti
+	apt purge --> rimuove il pacchetto e i file di configurazione
+	apt autoremove --> rimuove le dipendenze che non sono più utili
+	apt --reinstall --> reinstalla il pacchetto da capo
+	apt list --> elenca i pacchetti in base ai criteri (--installed, --upgradable)
+
+Update:
+	apt update --> aggiorna le repo e controlla la presenza di un nuovo osoftware
+	apt upgrade [dist-upgrade] --> aggiorna i pacchetti alla versione più recente della repo
+	apt clean --> ripulische la cache locale dei pacchetti
+
+update > upgrade per aggiornare tutto
+
+
+/etc/apt/sources.list o /etc/apt/sources.list.d/ --> Contiene i repository a cui apt fa riferimento.
+
+/var/cache/apt/archives/ --> Cartella in cui sono presenti i file della cache.
+
+/var/lib/apt/lists/lock --> File che serve ad avvertire che un’istanza di apt sta operando. Se il pc viene spento durante un’operazione rimane.
+
+Modifica dei repository:
+	add-apt-repository repo --> Aggiunge un repository alla lista.
+	add-apt-repository -r repo --> Rimuove il repository repo dalla lista
+
+	Aggiungendo manualmente la riga della repo nel file / cartella in un file apposito [es. deb http://repository.spotify.com stable non-free]
+
+
+Installazione tramite file (deb)
+
+vantaggi:
+	decide la versione anche di molto vecchie / recenti
+	più sicuro
+
+svantaggi:
+	bisogna cercare il file sul web
+	potrebbere essere molto meno stabili
+	potrebbero esserci falle di sicurezza
+	i pacchetti non sono gestiti in maniere automatica da apt
+
+
+DPKG
+
+-i o --install --> insall il pacchetto
+
+--configure --> configura i pacchetti estratti
+
+--configure -a --> configura i pacchetti che sono rimasti appensi, utile se il pc si è spento durante l'installazione
+
+-r o --remove --> rimuove
+
+-P o --purge --> rimuove anche le configurazioni
+
+dpkg-reconfigure --> riconfigura il pacchetto installato
+
+
+Compilazione manuale di un programma
+
+vantaggi:
+	ultissima versione del programma
+
+svantaggi:
+	molto suscettibile ai bug
+	per aggiornare bisogna riscaricare e ricompilare
+	ci sono vari modi di compilazione
+	è lento
+	le dipendeze vanno installate a mano
+	non sempre c'è modo di disintallarlo
+
+passi [normalemente c'è scritto tutto nella docs / wiki]:
+	si clona il repo
+	make 
+
+
+Compilazione AUR
+
+AUR [Arch User Repository] una repo pubblica dove vengono caricati i PKGBUILD
+
+I PKGBUILD contengono istruzioni per compilare programmi sorgenti da pacchetti già esistenti e installarli con pacman
+
+DUR [Debian User Repository]
+
+
+E' molto improbabile che ci siano problemi delle dipendenze
+
+
+SNAP
+
+vantaggi:
+	installa le app con le librerie necessarie
+	permette l'isolamento dei programmi
+	permette la presenza di molteplici versioni del software
+	si può usare anche per IoT
+
+svantaggi:
+	sviluppato da Canonical
+	più lento
+	ha delle parti non open source
+	pesano di più
+
+c'è solo 1 repo [gestito da Canonical] non c'è scelta 
+
+FLATPAK
+	
+vantaggi:
+	installa le app con le librerie necessarie
+	permette l'isolamento
+	permette la presenza di molteplici versioni del software
+	sviluppato dalla community
+
+svantaggi:
+	aumento di spazio
+	solo per applicazioni desktop è limitato lato server
+
+
+AppImage
+
+vantaggi:
+	semplicissimo
+	compatibile con tutte le distro
+	le dipenze sono già incluse
+	è portatile
+	non richiede permessi di root
+
+svantaggi:
+	bisogna scaricare e aggiornare i programmi manualmente
+	occupano più spazio
