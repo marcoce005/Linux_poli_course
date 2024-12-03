@@ -1,0 +1,175 @@
+						COMPRESSIONE
+
+è possibile farlo via GUI, ma ovviamente si può fare anche via CLI
+
+File zip
+
+	zip -r archivio_compresso.zip archivio/
+
+	zip -r{valore da 0 a 9} archivio_compresso.zip archivio/
+
+	9 è la compressione maggiore
+
+
+File tar.gz
+	
+	deriva dal tar [Tape archive]
+	non fa compressione ma concatenamento
+
+	tar cf archivio_compresso.tar archivio/
+
+	per comprimere [senza raggruppamento dei file:
+
+	gzip archivio_compresso.tar			// cancella il file tar [-k non cancella il file .tar]
+
+	gunzip archivio_compresso.tar.gz	// reverse del gzip
+
+
+Compressione bzip2:
+	
+	bzip2 archivio_compresso.tar
+	bzip2 -d archivio_compresso.tar.bz2		// decompressione
+
+
+Compressione xz:
+	
+	xz -9 archivio_compresso.tar
+	unxz archivio_compresso.tar.xz		// decompressione
+
+
+Compressione zstd:
+	
+	utilizzato anche nelle pagine web nel protocollo HTTP
+	molto veloce nella compressione e nella decompressione
+
+	zstd archivio_compresso.tar
+
+
+Compressione lzma:
+
+	lzma archivio_compresso.tar
+	unlzma archivio_compresso.tar.lzma		// decompressione
+
+
+Compressione lzip:
+	
+	utilizzato nel bootscreen, ha bisogno di poche istruzioni per decomprimere
+
+
+
+						PROCESSI
+
+è un'entità dinami caricata sulla RAM [un programma in esecuzione]
+che ha un identificativo PID [process ID]
+
+Per visualizzare i processi si può fare attraverso GUI o CLI, nella CLI usiamo:
+	- top
+	- htop
+	- ps [in base all'utente]
+	- pstree [albero dei processi lanciati]
+
+top e htop li metto in ordine di uso CPU
+
+ps	(info processi correnti)
+	ps a		// all user
+	ps au		// more information
+	ps aux		// tutti i processi di sistema 
+
+
+Aggiungento la & al comando il processo non occupa la shell e ti rilascia il PID [sgancia il processo]
+
+	jobs --> da i processi in esecuzione in quella console
+
+Con CTRL-Z possiamo freezare i processi [invia il segnale SIGTSTP]
+
+fg --> riprende l'ultimo processo
+bg --> mette in background l'ultimo processo [sgancia il processo]
+
+comando & == comando + CTRL+Z + bg
+
+
+Uccidere un processo
+
+	CTRL-Z (invia il segnale SIGTSTP)
+
+	CTRL-C (invia il segnale SIGINT)
+
+	kill <PID> (invia il segnale SIGTERM)
+	
+	kill -9 <PID> (invia il segnale SIGKILL) oppure kill -KILL <PID>
+
+	kill -l (elenca i segnali disponibili)
+
+	killall <name>
+	
+	nice
+	
+	xkill
+
+kill -l --> per vedere tutti i segnali di kill
+
+
+
+						NETWORKING
+
+In principio fu usato net-tools
+
+Ora si usa iproute2 (sal 1999 per Linux 2.2)
+
+
+net-tools					iproute2					funzione
+
+
+ifconfig	--> 	ip addr, ip link, ip -s		--> indirizzo e configurazione del link
+
+route --> 	ip route	--> 	tabelle di routing
+
+arp		--> 	ip neigh	--> 	tabelle degli apparati vicini (tabella ARP per IPv4)
+
+iptunnel 	--> ip tunnel	-->		tunnel
+
+nameif, ifrename	--> 	ip link set name	--> 	rename del link
+
+ipmaddr 	--> 	ip maddr	-->		multicast
+
+netstat		--> ip -s, ss, ip route		--> 	statistiche di rete
+
+
+
+Configurazione di un ip statico via CLI
+
+net-tools
+
+	ifconfig eth0 192.168.1.100
+	route add default gw 192.168.1.1
+	vim /etc/resolv.conf
+	nameserver 208.67.222.222
+	nameserver 208.67.220.220
+
+ip-route2
+
+	ip addr add 192.168.1.100/24 dev eth0
+	ip route add default via 192.168.1.1
+	vim /etc/resolv.conf
+	nameserver 208.67.222.222
+	nameserver 208.67.220.220
+
+Il deamon che gestisce la rete è nm-tool che è chiamabile via CLI con nmcli o via GUI
+
+
+traceroute --> visualizza il percorso del pacchetto / richiesta
+
+nmap --> scansione / attacchi di rete
+
+wget --> scaricare la pagina web
+
+ssh --> [Secure Shell] connettersi a delle macchine in rete attraverso l'indirizzo e un username e una password
+
+nc --> port scanning
+
+scp --> copia su un server remoto
+
+
+TCP --> connection-oriented, più sicuro, ordina i pacchetti, + lento
+
+UDP --> connection-less, + veloce
