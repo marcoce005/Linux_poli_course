@@ -1,0 +1,126 @@
+								SYSTEMD
+							System Deamon
+
+E' un init system o system manager open-source per sistemi GNU/Linux:
+
+	- avvio parallelo dei servizi
+	- gestione delle dipendenza
+	- registrazione centralizzzata con journald
+
+Sostituisce i vecchi sistemi di init (come SysVinit) con un design moderno ed efficiente
+
+Rilasciato nel 2010 ed introdotto per primo da RedHat
+
+Architettura di systemd:
+	
+	Unit --> systemd organizza i task in unit, ce ne sono vari tipi:
+			
+			Service (.service) gestisce i servizi
+
+			Timer (.timer) pianifica le attività
+
+			Target (.target) raggruppa le unità (es. multi-user.targer per la modalità multiutente)
+
+			Socket (.socket) per attivazione basata su socket
+
+Strumenti da CLI:
+	
+	systemctl --> gestice e interroga lo stato delle uni
+
+	journalctl --> accede ai log
+
+	systemd edit nome_servizio.service [con --all modifichi una copia se no fa overwrite]
+
+
+Il PID di systemd sarà sempre 1 (PID 1) è il repsonsabile all'avvio di tutti i processi
+
+
+Perché systemd?
+
+è nato per unificare la gestione dei sistemi Linux il primo ad adottarlo fu Red Hat Eterprise Linux dalla versione 7.0
+
+
+Prima di systemd
+
+era tutto contenuto in /etc/init.d/...
+
+
+Ciclo di vita di una unit
+
+stati:
+
+	Active --> il servizio è in esecuzione
+
+	Inactive --> il servizio è fermo
+
+	Failed --> il servizio ha incontrato un errore
+
+Dipendenze delle unità: usa After=, Requires= e Wants= per gestire le dipendenze
+
+Un file .service descrive il srevizio gestito da systemd, ha la seguente struttura:
+	
+	[Unit] --> metadati e dipendenze
+
+	[Service] --> comportamento del servizio (comandi, policy di riavvio)
+
+	[Install] --> opzioni di abilitazione
+
+
+Timer
+
+un file .timer pianica le attività in base al tempo o agli intervalli
+
+casi d'uso:
+	automazione dei backup
+	pianificazione dell'esecuzione di script
+	maggior controllo rispetto a crond
+
+sezioni fondamentali per la .timer unit:
+
+	[Unit] --> metadati
+	[Timer] --> dettagli di pianificazione (OnCalendar=, OnBootSec=, OnUnitActiveSec=)
+
+
+
+
+								SSH
+						Secure Shell
+
+	ssh utente@indirizzo macchina remota
+
+si può utilizzare anche per il trasferimento di file tramite scp
+
+	scp utente@indirizzo:/path/ cartella_dove_voglio_salvare/
+
+	scp cartella_che_voglio_copiare/ utente@indirizzo:cartella_dove_voglio_copiare/ 
+
+
+Per il trasferimento di molti files / cartelle
+
+	rsync -az cartella/ utente@indirizzo:/path_copied/
+
+-a --> ricorsività e selezione tutti i file
+-z --> comprime prima di inviare
+
+Generazione di key per ssh:
+
+	ssh-keygen
+
+Usa crittografia Asimmetrica con 2 chiavi:
+	chiave privata	[deve rimane privata solo al mittente / destinatario]
+	chiave pubblica [può essere condivisa]
+
+Le chiavi sono correlate matematicamente
+
+Possiamo cifrare con la privata per ottnere autenticazione, quindi tutti potranno leggere il messaggio e saranno certi che sono stato io a spedirlo
+
+Oppure possiamo cifrare con la chiave pubblica del destinatario e questo garantisce la riservatezza ovvero solo io e il destinatario potremmo sapere il contennuto del messaggio scambiato. 
+
+
+Come proteggersi dalla rete:
+
+	- disabilitare l'utente root
+	- disabilitare l'accesso con password
+	- usare una porta diversa dalla 22
+	- installre un configurazione fail2ban sul server [se un ip sbaglia la password troppe volte viene bannato]
+	- configurare un VPN per accedere alla propria rete
