@@ -1,0 +1,45 @@
+							SCRIPT BASH
+
+
+script == istruzioni scritte in un linguaggio interpretato da un altro programma [interprete]
+
+#! /bin/bash		--> è lo shi bang che determina il linguaggio dello script
+
+con which bash --> otteniamo la bash corrente
+
+#!/usr/bin/env bash		--> prende la prima bash disponibile
+
+Per convenzione tutto quello che ritorna 0 nella shell è un successo. 
+
+echo $?		--> 	da il risultato di comparazione
+es.
+	[ 1 -eq 1 ]		return 0	# true
+	[ 1 -eq 2 ]		return 1	# false
+
+
+
+read -p "string" values		--> 	per predenre una stringa in input
+
+[[ "$USER" == "$name" ]] && echo "Ciao $name" || echo "Ma chi ti conosce"
+
+	one-liner --> scrittura su una riga
+
+traduzione dell'if
+
+if [[ "$USER" == "$name" ]];
+then
+	echo "Ciao $USER"
+else
+	echo "Ma chi ti conosce"
+fi
+
+
+Comparazione tra una stringa e una regex	--> 	=~
+
+
+CICLI
+
+while condizione;
+do
+	do something
+done
